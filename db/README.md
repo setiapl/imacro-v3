@@ -1,14 +1,14 @@
-Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich  nie
-duplikować, tabele poprostu się rozrosną z czasem, do większych wersji
+**Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich  nie
+duplikować, tabele poprostu się rozrosną z czasem, do większych wersji**
 
-table: client
+**table: client**
 client: xxxx
 
-table: client_domain
+**table: client_domain**
 client: xxx
 domain: xxx
 
-table: client_nap
+**table: client_nap**
 client: xxx
 company_name: xxx
 company_brand_names: xxx
@@ -19,41 +19,41 @@ state: xxx
 phone: xxx
 email: xxx
 
-table: client_social
+**table: client_social**
 client: xxx
 social_domain: xxx
 social_client_url: xxx
 
-table: client_domain_url:
+**table: client_domain_url:**
 client: xxx
 domain: xxx
 domain_url: xxx
 main_keyword: xxx
 other_keywords: xxx
 
-table: client_txt:
+**table: client_txt:**
 client: xxx
 domain_url: xxx
 txt_type: xxx
 txt_title: xxx
 txt_body: xxx
 
-table: client_login:
+**table: client_login:**
 client: xxx
 login: xxx
 email: xxx
 password: xxx
 
-table: client_report:
+**table: client_report:**
 client: xxx
 url: xxx
 
-table: action
+**table: action**
 client: xxx
 site: xxx
 action: xxx
 
-table: action_steps
+**table: action_steps**
 site: xxx
 KEYS
 key_site - strona której to dotyczy
@@ -103,7 +103,7 @@ func_clear
 func_refresh
 
 
-Akcja:
+**Akcja:**
 init - inicjalizacja skryptu
 register - rejestracja w serwisie
 login - logowanie do serwisu
