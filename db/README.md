@@ -1,4 +1,5 @@
-# Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich nie duplikować, tabele poprostu się rozrosną z czasem, do większych wersji
+# DB project
+* Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich nie duplikować, tabele poprostu się rozrosną z czasem, do większych wersji*
 
 ## table: client
 * client: xxxx
