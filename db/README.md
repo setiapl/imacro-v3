@@ -1,5 +1,4 @@
-# Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich  nie
- duplikować, tabele poprostu się rozrosną z czasem, do większych wersji
+# Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich nie duplikować, tabele poprostu się rozrosną z czasem, do większych wersji
 
 ## table: client
 * client: xxxx
