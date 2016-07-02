@@ -1,63 +1,106 @@
 # DB project
 *Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich nie duplikować, tabele poprostu się rozrosną z czasem, do większych wersji*
 
-## table: client
+## Client
 * client: xxxx
+** klient jest unikalny
 
-## table: client_domain
+## Domeny client
 * client: xxx
 * domain: xxx
+** klient może mieć wiele domen
+** domena może być tylko przypisana do jednego klienta
 
-## table: client_nap
+## client_nap
 * client: xxx
 * company_name: xxx
+** nazwa firmy może się zmienić
 * company_brand_names: xxx
+** nazw brandowych lub skróconych może być wiele
 * address: xxx
 * zip: xxx
+** może się zmienić
 * city: xxx
+** może się zmienić
 * state: xxx
+** może się zmienić
 * phone: xxx
+** może się zmienić
 * email: xxx
+** może się zmienić
 
-## table: client_social
+** jeśli adres bądź nazwa się zmieni to chce wiedzieć od kiedy działa nowa  wersja
+
+## client_social
 * client: xxx
 * social_domain: xxx
+** domeny są wspólne i się powtarzają
 * social_client_url: xxx
+** url jest unikalny dla klienta
 
-## table: client_domain_url:
+## client_domain_url:
 * client: xxx
 * domain: xxx
 * domain_url: xxx
+** url jest unikalny
 * main_keyword: xxx
+** to jest główne słowo kluczowe
 * other_keywords: xxx
+** inne pasujące słowa kluczowe dodanego URL-a
 
-## table: client_txt:
+## client_txt:
 * client: xxx
 * domain_url: xxx
+** do jakiego konkretnego URL-a jest dany tekst
+** jeżeli tekst jest dla głównej domeny a dla URL-a nie ma to używamy dla  głównej
 * txt_type: xxx
+** typ txt np. synonim, uniq, tłumaczony z EN uniq lub synonim
 * txt_title: xxx
+** tytuł artykułu
 * txt_body: xxx
+** treść artykułu, może zawierać obrazki, filmy linki
 
-## table: client_login:
+## client_login:
 * client: xxx
+* site
+** serwis do którego te dane używamy
 * login: xxx
+** login do serwisu x
 * email: xxx
+** email do serwisu x
 * password: xxx
+** hasło do serwisu x
 
-## table: client_report:
+## client_report:
 * client: xxx
 * url: xxx
+** link utworzony
+* anchor: xxx
+** anchor linka utworzonego
+* link_type: xxx
+** np. txt, img, itp.
+* data utworzenia linku
 
-## table: action
+## works
 * client: xxx
 * site: xxx
-* action: xxx
+** na jakim serwisie wykonujemy akcje
+* work: xxx
+** jaką akcję wykonujemy
 
-## table: action_steps
+## action
+* do wymyślenia
+* informacja jakie akcje trzeba wykonać żeby osiągnąć konkretną akcję
+* trzba opisać wszystko co ma zrobić i jak ma zrobić
+
+## fields
 * site: xxx
+** jakiej strony to dotyczy
 ### KEYS
-* key_site - strona której to dotyczy
-* key_action - akcja jakiej to dotyczy - taką samą nazwę dostaje zmienna w JS
+* action
+** jakiej akcji to dotyczy init, login, register itp.
+* action_steps
+** konkretne kroki np. goto, wypełnienie pola, check
 * status - czy pole jest aktywne czy nie
 * value - wartość do użycia lub podstawienia
 
@@ -109,7 +152,36 @@
 * login - logowanie do serwisu
 * addblog - dodawanie nowego bloga + otrzymanie adresu do tego bloga, dodatkowy krok oprócz rejestracji.
 * addpost - dodawanie posta/wpisu
+
 * GoTo - akcja szczegółowa, idź gdzieś przejdź gdzieś żeby tam wykonać akcje
 * Form - jak już tam jesteś wypełnij ten formularz
 * Check - sprawdź czy zrobiłeś prawidłowo to co miałeś zrobić
 
+
+END
+------------------------------------------
+client
+request
+actions
+templates
+
+
+template- np. logowanie do FB
+
+
+
+def getClient(nazwa):
+    klient=db.getdict('select * from kient where nazwa = %s',[nazwa])[0]
+    res=db.getresult('select nazwa, wartosc from dane_klienta where
+    id_klienta = %d',[klient['id']])
+    klient['dae']=dict()
+    for row in res:
+        klient['dane'][row[0]]=row[1]
+    return klient
+
+
+mamy klienta
+mamy domeny których może mieć wiele
+Domeny są unikalne
+
+def updateClient(id,dane):
