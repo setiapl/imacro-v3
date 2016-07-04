@@ -2,16 +2,19 @@
 *Zakładam że te dane będą wykorzystane też w innych miejscach żeby ich nie duplikować, tabele poprostu się rozrosną z czasem, do większych wersji*
 
 ## Client
+*Podstawowe dane klienta*
 * client: xxxx
 ** klient jest unikalny
 
 ## Domeny client
+*Domeny klienta*
 * client: xxx
 * domain: xxx
 ** klient może mieć wiele domen
 ** domena może być tylko przypisana do jednego klienta
 
 ## client_nap
+*Dane teleadresowe klienta tzw. NAP*
 * client: xxx
 * company_name: xxx
 ** nazwa firmy może się zmienić
@@ -32,6 +35,7 @@
 ** jeśli adres bądź nazwa się zmieni to chce wiedzieć od kiedy działa nowa  wersja
 
 ## client_social
+*Sociale klienta czyli na jakim portalu jakie sociale mają*
 * client: xxx
 * social_domain: xxx
 ** domeny są wspólne i się powtarzają
@@ -39,6 +43,7 @@
 ** url jest unikalny dla klienta
 
 ## client_domain_url:
+*url na domenie klienta, jaki url z jakim słowem jest powiązany*
 * client: xxx
 * domain: xxx
 * domain_url: xxx
@@ -49,6 +54,7 @@
 ** inne pasujące słowa kluczowe dodanego URL-a
 
 ## client_txt:
+*Teksty używane do linkowania*
 * client: xxx
 * domain_url: xxx
 ** do jakiego konkretnego URL-a jest dany tekst
@@ -61,6 +67,7 @@
 ** treść artykułu, może zawierać obrazki, filmy linki
 
 ## client_login:
+*Dane do logowania do strona na których mamy założone konta i na których robimy linki*
 * client: xxx
 * site
 ** serwis do którego te dane używamy
@@ -72,6 +79,7 @@
 ** hasło do serwisu x
 
 ## client_report:
+*raport na temat linków zrobionych dla klienta*
 * client: xxx
 * url: xxx
 ** link utworzony
@@ -82,6 +90,7 @@
 * data utworzenia linku
 
 ## works
+*Co chcemy dla tego klienta zrobić np. linka na jakiejś stronie*
 * client: xxx
 * site: xxx
 ** na jakim serwisie wykonujemy akcje
@@ -89,11 +98,16 @@
 ** jaką akcję wykonujemy
 
 ## action
+*Szablon opisujący jakie akcje trzeba wykonać żeby dane zadanie wykonać*
+*np. logowanie + postowanie*
 * do wymyślenia
 * informacja jakie akcje trzeba wykonać żeby osiągnąć konkretną akcję
 * trzba opisać wszystko co ma zrobić i jak ma zrobić
 
 ## fields
+*Szczegółwe akcje np. gdzie iść, jak wypełnić pola, co kliknąć, co włączyć wyłączyć na stronie, jak sprawdzić że to zostało dobrze wykonane*
+*jeden wiersz opisuje jedno zadanie np. wypłnienie pola password*
+
 * site: xxx
 ** jakiej strony to dotyczy
 ### KEYS
